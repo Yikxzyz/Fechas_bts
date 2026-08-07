@@ -49,7 +49,7 @@
     { date: "2026-08-01", city: "East Rutherford", country: "Estados Unidos", venue: "MetLife Stadium", region: "north-america", surpriseSongs: ["Dis-ease", "Run"] },
     { date: "2026-08-02", city: "East Rutherford", country: "Estados Unidos", venue: "MetLife Stadium", region: "north-america", surpriseSongs: ["Autumn Leaves", "Go Go"] },
     { date: "2026-08-05", city: "Foxborough", country: "Estados Unidos", venue: "Gillette Stadium", region: "north-america", surpriseSongs: ["Paradise", "No More Dream"] },
-    { date: "2026-08-06", city: "Foxborough", country: "Estados Unidos", venue: "Gillette Stadium", region: "north-america", surpriseSongs: null },
+    { date: "2026-08-06", city: "Foxborough", country: "Estados Unidos", venue: "Gillette Stadium", region: "north-america", surpriseSongs: ["N.O", "Make it Right"] },
     { date: "2026-08-10", city: "Baltimore", country: "Estados Unidos", venue: "M&T Bank Stadium", region: "north-america", surpriseSongs: null },
     { date: "2026-08-11", city: "Baltimore", country: "Estados Unidos", venue: "M&T Bank Stadium", region: "north-america", surpriseSongs: null },
     { date: "2026-08-15", city: "Arlington", country: "Estados Unidos", venue: "AT&T Stadium", region: "north-america", surpriseSongs: null },
