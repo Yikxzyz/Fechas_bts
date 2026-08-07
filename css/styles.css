@@ -1,0 +1,540 @@
+/* BTS ARIRANG — paleta álbum: blanco, negro, rojo */
+
+:root {
+  --black: #0a0a0a;
+  --black-soft: #141414;
+  --black-card: #1a1a1a;
+  --white: #ffffff;
+  --white-muted: #e8e8e8;
+  --gray: #888888;
+  --gray-dark: #444444;
+  --red: #c8102e;
+  --red-bright: #e02020;
+  --red-dark: #8b0000;
+  --red-glow: rgba(200, 16, 46, 0.35);
+  --bg: var(--black);
+  --surface: var(--black-soft);
+  --surface-hover: var(--black-card);
+  --border: rgba(255, 255, 255, 0.12);
+  --border-red: rgba(200, 16, 46, 0.5);
+  --text: var(--white);
+  --text-muted: var(--gray);
+  --radius: 4px;
+  --radius-sm: 2px;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200, 16, 46, 0.12), transparent),
+    linear-gradient(180deg, var(--black) 0%, #050505 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--black) 0%, var(--red) 50%, var(--black) 100%);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.container {
+  width: min(1200px, 92vw);
+  margin-inline: auto;
+}
+
+/* ——— Hero ——— */
+.hero {
+  padding: 4rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  border: 1px solid var(--red);
+  padding: 0.35rem 1rem;
+  margin-bottom: 1.25rem;
+  background: var(--red);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.hero-tour-name {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: var(--red-bright);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1rem;
+}
+
+.stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--red-bright);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ——— Secciones ——— */
+section {
+  padding: 2.5rem 0;
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--red);
+  padding-left: 1rem;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  margin-bottom: 0.35rem;
+  color: var(--white);
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.section-header em {
+  color: var(--red-bright);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* Song index */
+.song-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.song-index-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.9rem;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.song-index-item:hover {
+  background: var(--black-card);
+  border-color: var(--red);
+  transform: translateY(-1px);
+}
+
+.song-index-count {
+  font-size: 0.75rem;
+  color: var(--red-bright);
+  font-weight: 700;
+}
+
+/* ——— Filtros ——— */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  min-width: 70px;
+  font-weight: 600;
+}
+
+.chip {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.45rem 1rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chip:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.chip.active {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-wrap input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.65rem 1rem 0.65rem 2.5rem;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-wrap input:focus {
+  border-color: var(--red);
+}
+
+.search-wrap input::placeholder {
+  color: var(--gray-dark);
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray);
+  pointer-events: none;
+  font-size: 0.9rem;
+}
+
+.result-count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+/* ——— Grid de conciertos ——— */
+.concert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.concert-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.35rem;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  animation: fadeUp 0.5s ease both;
+  animation-delay: var(--delay, 0ms);
+}
+
+.concert-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-red);
+  box-shadow: 0 8px 32px var(--red-glow);
+}
+
+.concert-card[data-status="today"] {
+  border-color: var(--red-bright);
+  box-shadow: 0 0 24px var(--red-glow);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.concert-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.show-number {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gray);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+}
+
+.badge--past {
+  background: var(--black-card);
+  color: var(--white-muted);
+  border: 1px solid var(--border);
+}
+
+.badge--today {
+  background: var(--red);
+  color: var(--white);
+}
+
+.badge--upcoming {
+  background: transparent;
+  color: var(--gray);
+  border: 1px solid var(--gray-dark);
+}
+
+.concert-date {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: capitalize;
+  margin-bottom: 0.35rem;
+}
+
+.concert-city {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--white);
+}
+
+.concert-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.1rem;
+}
+
+.concert-songs-section {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.songs-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--red-bright);
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.songs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.song-tag {
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  border-left: 3px solid var(--red);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.concert-note {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--red-bright);
+  font-style: italic;
+}
+
+.songs-pending {
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-style: italic;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+}
+
+.btn-reset {
+  margin-top: 1rem;
+  background: var(--red);
+  border: none;
+  color: var(--white);
+  padding: 0.6rem 1.25rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-reset:hover {
+  background: var(--red-bright);
+}
+
+.info-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.info-box h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+
+.info-box p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.info-box strong {
+  color: var(--white);
+}
+
+.info-box em {
+  color: var(--red-bright);
+  font-style: normal;
+}
+
+.info-box p:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 2.5rem 0 3rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+footer a {
+  color: var(--red-bright);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-heart {
+  color: var(--red);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .concert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .result-count {
+    margin-left: 0;
+  }
+}
