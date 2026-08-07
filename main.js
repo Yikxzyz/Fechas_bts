@@ -159,19 +159,18 @@
   }
 
   function getStats() {
-    var completed = 0;
-    var withSongs = 0;
-    CONCERTS.forEach(function (c) {
-      if (getShowStatus(c) === "past") completed++;
-      if (c.surpriseSongs && c.surpriseSongs.length) withSongs++;
-    });
-    return {
-      completed: completed,
-      withSongs: withSongs,
-      uniqueSongs: getUniqueSurpriseSongs().length,
-      total: CONCERTS.length,
-    };
-  }
+  var completed = 0;
+
+  CONCERTS.forEach(function (c) {
+    if (getShowStatus(c) === "past") completed++;
+  });
+
+  return {
+    completed: completed,
+    remaining: CONCERTS.length - completed,
+    total: CONCERTS.length,
+  };
+}
 
   function filterConcerts() {
     return CONCERTS.filter(function (concert) {
@@ -179,7 +178,6 @@
 
       if (activeFilter === "past" && status !== "past") return false;
       if (activeFilter === "upcoming" && status !== "upcoming" && status !== "today") return false;
-      if (activeFilter === "with-songs" && !(concert.surpriseSongs && concert.surpriseSongs.length)) return false;
       if (activeRegion !== "all" && concert.region !== activeRegion) return false;
 
       if (searchQuery) {
@@ -256,12 +254,11 @@
   }
 
   function renderStats() {
-    var stats = getStats();
-    document.getElementById("stat-shows").textContent = stats.total;
-    document.getElementById("stat-completed").textContent = stats.completed;
-    document.getElementById("stat-songs-recorded").textContent = stats.withSongs;
-    document.getElementById("stat-unique-songs").textContent = stats.uniqueSongs;
-  }
+  var stats = getStats();
+  document.getElementById("stat-shows").textContent = stats.total;
+  document.getElementById("stat-completed").textContent = stats.completed;
+  document.getElementById("stat-remaining").textContent = stats.remaining;
+}
 
   function renderSongIndex() {
     var songCounts = {};
@@ -302,10 +299,10 @@
       buttons[i].addEventListener("click", function () {
         searchQuery = this.getAttribute("data-song");
         document.getElementById("search").value = searchQuery;
-        activeFilter = "with-songs";
+        activeFilter = "all";
         var filterBtns = document.querySelectorAll("[data-filter]");
         for (var j = 0; j < filterBtns.length; j++) {
-          filterBtns[j].classList.toggle("active", filterBtns[j].getAttribute("data-filter") === "with-songs");
+          filterBtns[j].classList.toggle("active", filterBtns[j].getAttribute("data-filter") === "all");
         }
         render();
         document.getElementById("concerts").scrollIntoView({ behavior: "smooth" });
