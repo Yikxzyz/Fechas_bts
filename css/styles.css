@@ -76,9 +76,66 @@ body::after {
 
 /* ——— Hero ——— */
 .hero {
-  padding: 4rem 0 3rem;
+  position: relative;
+  padding: 5.5rem 0 7.5rem;
   text-align: center;
-  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  border-bottom: none;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.18) 0%,
+      rgba(10, 10, 10, 0.28) 18%,
+      rgba(10, 10, 10, 0.5) 45%,
+      rgba(10, 10, 10, 0.82) 74%,
+      rgba(10, 10, 10, 1) 100%
+    ),
+    radial-gradient(circle at 50% 14%, rgba(200, 16, 46, 0.24), transparent 42%),
+    url("../img/bts-group.jpg") center 20% / cover no-repeat;
+  filter: grayscale(1) contrast(1.08) brightness(0.48);
+  transform: scale(1.04);
+  z-index: -3;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 240px;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0) 0%,
+    rgba(10, 10, 10, 0.18) 24%,
+    rgba(10, 10, 10, 0.46) 52%,
+    rgba(10, 10, 10, 0.82) 78%,
+    var(--black) 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 2rem;
+  right: clamp(1rem, 4vw, 3rem);
+  width: clamp(88px, 10vw, 130px);
+  opacity: 0.82;
+  z-index: 3;
+  filter: brightness(0) invert(1) drop-shadow(0 0 20px rgba(255, 255, 255, 0.12));
 }
 
 .hero-badge {
@@ -101,6 +158,7 @@ body::after {
   letter-spacing: 0.12em;
   color: var(--white);
   margin-bottom: 0.25rem;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
 }
 
 .hero-tour-name {
@@ -110,40 +168,43 @@ body::after {
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 0.75rem;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
 }
 
 .hero-subtitle {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.62);
   font-size: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
-  max-width: 700px;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 1.25rem;
+  max-width: 880px;
   margin-inline: auto;
 }
 
 .stat {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 1.25rem 1rem;
+  background: rgba(20, 20, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.4rem 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
 }
 
 .stat-value {
   display: block;
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--red-bright);
   line-height: 1.1;
 }
 
 .stat-label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.56);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -522,19 +583,35 @@ footer a:hover {
 
 @media (max-width: 600px) {
   .hero {
-    padding: 2.5rem 0 2rem;
-  }
+  padding: 4rem 0 6rem;
+}
 
-  .concert-grid {
-    grid-template-columns: 1fr;
-  }
+.hero::before {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.2) 0%,
+      rgba(10, 10, 10, 0.32) 20%,
+      rgba(10, 10, 10, 0.56) 50%,
+      rgba(10, 10, 10, 0.84) 78%,
+      rgba(10, 10, 10, 1) 100%
+    ),
+    radial-gradient(circle at 50% 14%, rgba(200, 16, 46, 0.22), transparent 42%),
+    url("../img/bts-group.jpg") center top / cover no-repeat;
+}
 
-  .filter-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
+.hero::after {
+  height: 170px;
+}
 
-  .result-count {
-    margin-left: 0;
-  }
+.hero-logo {
+  top: 1rem;
+  right: 1rem;
+  width: 76px;
+  opacity: 0.72;
+}
+
+.stats {
+  grid-template-columns: 1fr;
+  max-width: 100%;
 }
