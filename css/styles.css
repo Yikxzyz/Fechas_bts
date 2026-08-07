@@ -98,7 +98,7 @@ body::after {
       rgba(10, 10, 10, 1) 100%
     ),
     radial-gradient(circle at 50% 14%, rgba(200, 16, 46, 0.24), transparent 42%),
-    url("../img/bts-group.jpg") center 20% / cover no-repeat;
+    url("../img/bts-group.png") center 20% / cover no-repeat;
   filter: grayscale(1) contrast(1.08) brightness(0.48);
   transform: scale(1.04);
   z-index: -3;
@@ -597,7 +597,7 @@ footer a:hover {
       rgba(10, 10, 10, 1) 100%
     ),
     radial-gradient(circle at 50% 14%, rgba(200, 16, 46, 0.22), transparent 42%),
-    url("../img/bts-group.jpg") center top / cover no-repeat;
+    url("../img/bts-group.png") center top / cover no-repeat;
 }
 
 .hero::after {
