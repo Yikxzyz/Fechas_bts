@@ -604,7 +604,12 @@ footer a:hover {
 .hero::after {
   height: 170px;
 }
-
+.hero-logo {
+  top: 1rem;
+  right: 1rem;
+  width: 76px;
+  opacity: 0.78;
+}
 .stats {
   grid-template-columns: 1fr;
   max-width: 100%;
