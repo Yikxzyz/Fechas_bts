@@ -135,8 +135,9 @@ body::after {
   top: 2rem;
   right: clamp(1rem, 4vw, 3rem);
   width: clamp(88px, 10vw, 130px);
-  opacity: 0.82;
+  opacity: 0.88;
   z-index: 3;
+  filter: brightness(0) invert(1) drop-shadow(0 0 18px rgba(255, 255, 255, 0.14));
 }
 
 .hero-badge {
@@ -610,7 +611,7 @@ footer a:hover {
   top: 1rem;
   right: 1rem;
   width: 76px;
-  opacity: 0.72;
+  opacity: 0.78;
 }
 
 .stats {
