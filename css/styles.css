@@ -130,16 +130,6 @@ body::after {
   z-index: 2;
 }
 
-.hero-logo {
-  position: absolute;
-  top: 2rem;
-  right: clamp(1rem, 4vw, 3rem);
-  width: clamp(88px, 10vw, 130px);
-  opacity: 0.88;
-  z-index: 3;
-  filter: brightness(0) invert(1) drop-shadow(0 0 18px rgba(255, 255, 255, 0.14));
-}
-
 .hero-badge {
   display: inline-block;
   font-size: 0.75rem;
@@ -605,13 +595,6 @@ footer a:hover {
 
 .hero::after {
   height: 170px;
-}
-
-.hero-logo {
-  top: 1rem;
-  right: 1rem;
-  width: 76px;
-  opacity: 0.78;
 }
 
 .stats {
