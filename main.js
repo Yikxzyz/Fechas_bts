@@ -52,7 +52,7 @@
     { date: "2026-08-06", city: "Foxborough", country: "Estados Unidos", venue: "Gillette Stadium", region: "north-america", surpriseSongs: ["N.O", "Make it Right"] },
     { date: "2026-08-10", city: "Baltimore", country: "Estados Unidos", venue: "M&T Bank Stadium", region: "north-america", surpriseSongs: ["Telepathy", "Boy in Luv"] },
     { date: "2026-08-11", city: "Baltimore", country: "Estados Unidos", venue: "M&T Bank Stadium", region: "north-america", surpriseSongs: ["Just One Day", "Best of Me"] },
-    { date: "2026-08-15", city: "Arlington", country: "Estados Unidos", venue: "AT&T Stadium", region: "north-america", surpriseSongs: null },
+    { date: "2026-08-15", city: "Arlington", country: "Estados Unidos", venue: "AT&T Stadium", region: "north-america", surpriseSongs: ["Permission to Dance", "Go Go"] },
     { date: "2026-08-16", city: "Arlington", country: "Estados Unidos", venue: "AT&T Stadium", region: "north-america", surpriseSongs: null },
     { date: "2026-08-22", city: "Toronto", country: "Canadá", venue: "Rogers Stadium", region: "north-america", surpriseSongs: null },
     { date: "2026-08-23", city: "Toronto", country: "Canadá", venue: "Rogers Stadium", region: "north-america", surpriseSongs: null },
