@@ -56,7 +56,7 @@
     { date: "2026-08-16", city: "Arlington", country: "Estados Unidos", venue: "AT&T Stadium", region: "north-america", surpriseSongs: ["Butterfly", "DNA"] },
     { date: "2026-08-22", city: "Toronto", country: "Canadá", venue: "Rogers Stadium", region: "north-america", surpriseSongs: ["Dope", "Outro: Wings"] },
     { date: "2026-08-23", city: "Toronto", country: "Canadá", venue: "Rogers Stadium", region: "north-america", surpriseSongs: ["00:00 (Zero O'clock)", "Outro: Tear"] },
-    { date: "2026-08-27", city: "Chicago", country: "Estados Unidos", venue: "Soldier Field", region: "north-america", surpriseSongs: null },
+    { date: "2026-08-27", city: "Chicago", country: "Estados Unidos", venue: "Soldier Field", region: "north-america", surpriseSongs: ["Tomorrow", "Hip Hop Phile"] },
     { date: "2026-08-28", city: "Chicago", country: "Estados Unidos", venue: "Soldier Field", region: "north-america", surpriseSongs: null },
     { date: "2026-09-01", city: "Los Ángeles", country: "Estados Unidos", venue: "SoFi Stadium", region: "north-america", surpriseSongs: null },
     { date: "2026-09-02", city: "Los Ángeles", country: "Estados Unidos", venue: "SoFi Stadium", region: "north-america", surpriseSongs: null },
