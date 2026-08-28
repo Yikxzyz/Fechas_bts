@@ -159,25 +159,25 @@
   }
 
   function getStats() {
-  var completed = 0;
+    var completed = 0;
 
-  CONCERTS.forEach(function (c) {
-    if (getShowStatus(c) === "past") completed++;
-  });
+    CONCERTS.forEach(function (c) {
+      if (getShowStatus(c) === "past") completed++;
+    });
 
-  return {
-    completed: completed,
-    remaining: CONCERTS.length - completed,
-    total: CONCERTS.length,
-  };
-}
+    return {
+      completed: completed,
+      remaining: CONCERTS.length - completed,
+      total: CONCERTS.length,
+    };
+  }
 
   function filterConcerts() {
-    return CONCERTS.filter(function (concert) {
+    var result = CONCERTS.filter(function (concert) {
       var status = getShowStatus(concert);
 
-      if (activeFilter === "past" && status !== "past") return false;
-      if (activeFilter === "upcoming" && status !== "upcoming" && status !== "today") return false;
+      if (activeFilter === "past" && status !== "past" && status !== "today") return false;
+      if (activeFilter === "upcoming" && status !== "upcoming") return false;
       if (activeRegion !== "all" && concert.region !== activeRegion) return false;
 
       if (searchQuery) {
@@ -191,6 +191,12 @@
 
       return true;
     });
+
+    if (activeFilter === "past") {
+      result = result.slice().reverse();
+    }
+
+    return result;
   }
 
   function statusBadge(status) {
@@ -254,11 +260,11 @@
   }
 
   function renderStats() {
-  var stats = getStats();
-  document.getElementById("stat-shows").textContent = stats.total;
-  document.getElementById("stat-completed").textContent = stats.completed;
-  document.getElementById("stat-remaining").textContent = stats.remaining;
-}
+    var stats = getStats();
+    document.getElementById("stat-shows").textContent = stats.total;
+    document.getElementById("stat-completed").textContent = stats.completed;
+    document.getElementById("stat-remaining").textContent = stats.remaining;
+  }
 
   function renderSongIndex() {
     var songCounts = {};
