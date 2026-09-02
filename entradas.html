@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src https://docs.google.com https://spreadsheets.google.com https://*.googleusercontent.com;" />
+    <meta name="description" content="Directorio de entradas BTS ARIRANG World Tour Santiago de Chile — compra y venta entre fans" />
+    <title>ARMY Hub · Directorio de Entradas — Santiago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+
+    <header class="hero hero--small">
+      <div class="container">
+        <a href="/" class="back-link">← Volver al tour</a>
+        <span class="hero-badge">🎟 Santiago de Chile</span>
+        <h1>Directorio de Entradas</h1>
+        <p class="hero-subtitle" id="dir-subtitle">BTS ARIRANG World Tour · Estadio Nacional</p>
+      </div>
+    </header>
+
+    <main class="container">
+
+      <!-- DISCLAIMER -->
+      <div class="disclaimer-box">
+        <strong>⚠️ Aviso importante</strong>
+        <p>Este directorio es solo un informativo entre fans. <strong>No somos intermediarios, no procesamos pagos ni garantizamos ninguna transacción.</strong> Siempre verifica la identidad del vendedor antes de realizar cualquier pago. El intercambio ocurre directamente entre comprador y vendedor fuera de esta plataforma. Army Hub no se hace responsable por estafas u operaciones fraudulentas.</p>
+      </div>
+
+      <!-- FILTROS -->
+      <section id="dir-filters-section">
+        <div class="filterbar">
+
+          <!-- Fecha -->
+          <div class="fb-group">
+            <span class="fb-label">Fecha</span>
+            <div class="fb-chips">
+              <button type="button" class="fchip active" data-fecha="all">Todas</button>
+              <button type="button" class="fchip" data-fecha="14">14 Oct</button>
+              <button type="button" class="fchip" data-fecha="16">16 Oct</button>
+              <button type="button" class="fchip" data-fecha="17">17 Oct</button>
+            </div>
+          </div>
+
+          <div class="fb-divider"></div>
+
+          <!-- Cantidad -->
+          <div class="fb-group">
+            <span class="fb-label">Entradas</span>
+            <div class="fb-chips">
+              <button type="button" class="fchip active" data-cantidad="all">Todas</button>
+              <button type="button" class="fchip" data-cantidad="1">1</button>
+              <button type="button" class="fchip" data-cantidad="2">2</button>
+              <button type="button" class="fchip" data-cantidad="3">3</button>
+              <button type="button" class="fchip" data-cantidad="4">4+</button>
+            </div>
+          </div>
+
+          <div class="fb-divider"></div>
+
+          <!-- Zona — dropdown -->
+          <div class="fb-group fb-group--zona" id="zona-wrap">
+            <span class="fb-label">Zona</span>
+            <button type="button" class="fb-zona-btn" id="zona-btn" aria-haspopup="listbox" aria-expanded="false">
+              <span id="zona-label">Cualquiera</span>
+              <span class="fb-zona-arrow">▾</span>
+            </button>
+            <!-- Dropdown -->
+            <div class="zona-dropdown" id="zona-dropdown" hidden role="listbox" aria-multiselectable="true">
+              <div class="zona-dropdown-inner" id="zona-list">
+                <!-- opciones generadas por JS -->
+                <label class="zona-option zona-option--all">
+                  <input type="checkbox" value="all" checked /> Todas las zonas
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="fb-divider"></div>
+
+          <!-- Precio -->
+          <div class="fb-group fb-group--price">
+            <span class="fb-label">Precio máx. <span class="fb-price-val" id="fb-price-val">Sin límite</span></span>
+            <div class="fb-price-track">
+              <input type="range" id="filter-precio" class="adv-slider" min="0" max="500000" step="10000" value="500000" />
+            </div>
+            <div class="fb-chips fb-presets">
+              <button type="button" class="fchip fchip--xs active" data-preset="all">Sin límite</button>
+              <button type="button" class="fchip fchip--xs" data-preset="100000">≤$100k</button>
+              <button type="button" class="fchip fchip--xs" data-preset="200000">≤$200k</button>
+              <button type="button" class="fchip fchip--xs" data-preset="300000">≤$300k</button>
+            </div>
+          </div>
+
+          <!-- Meta: count + limpiar -->
+          <div class="fb-meta">
+            <span class="result-count" id="dir-count"></span>
+            <button type="button" class="fb-clear" id="adv-clear" hidden>Limpiar ×</button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- GRID DE ANUNCIOS -->
+      <section id="dir-listings">
+        <div class="concert-grid" id="listings-grid">
+          <div class="empty-state"><p>Cargando anuncios...</p></div>
+        </div>
+      </section>
+
+      <!-- BOTÓN PUBLICAR -->
+      <section id="dir-publish">
+        <div class="info-box">
+          <h3>¿Tienes entradas para vender?</h3>
+          <p>Completa el formulario con tus datos y la información de tus entradas. Nuestro equipo revisará tu solicitud y la publicará en este directorio si cumple los requisitos.</p>
+          <p class="publish-note">El proceso de revisión puede tomar hasta 24 horas.</p>
+          <a
+            href="https://forms.gle/6fKUnYbgnc5vDsWz9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-publish"
+          >Publicar mis entradas →</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>Hecho con mucho amor para mi novia Cony - Hecho por Yikxzyz · Proyecto fan no oficial.</p>
+        <p>Este directorio no garantiza ninguna transacción. Úsalo bajo tu propia responsabilidad.</p>
+      </div>
+    </footer>
+
+    <script src="js/entradas.js"></script>
+  </body>
+</html>
