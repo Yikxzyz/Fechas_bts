@@ -64,7 +64,7 @@
     { date: "2026-09-06", city: "Los Ángeles", country: "Estados Unidos", venue: "SoFi Stadium", region: "north-america", surpriseSongs: ["Whalien 52", "Spring Day"] },
     { date: "2026-10-02", city: "Bogotá", country: "Colombia", venue: "Estadio El Campín", region: "south-america", surpriseSongs: ["I'm Fine", "So What"] },
     { date: "2026-10-03", city: "Bogotá", country: "Colombia", venue: "Estadio El Campín", region: "south-america", surpriseSongs: ["We Are Bulletproof Pt.2", "Mikrokosmos"] },
-    { date: "2026-10-07", city: "Lima", country: "Perú", venue: "Estadio San Marcos", region: "south-america", surpriseSongs: null },
+    { date: "2026-10-07", city: "Lima", country: "Perú", venue: "Estadio San Marcos", region: "south-america", surpriseSongs: ["Home", "Outro: Wings"] },
     { date: "2026-10-09", city: "Lima", country: "Perú", venue: "Estadio San Marcos", region: "south-america", surpriseSongs: null },
     { date: "2026-10-10", city: "Lima", country: "Perú", venue: "Estadio San Marcos", region: "south-america", surpriseSongs: null },
     { date: "2026-10-14", city: "Santiago", country: "Chile", venue: "Estadio Nacional", region: "south-america", surpriseSongs: null },
