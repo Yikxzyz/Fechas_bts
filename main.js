@@ -68,7 +68,7 @@
     { date: "2026-10-09", city: "Lima", country: "Perú", venue: "Estadio San Marcos", region: "south-america", surpriseSongs: ["Paldogangsan", "We Are Bulletproof: The Eternal"] },
     { date: "2026-10-10", city: "Lima", country: "Perú", venue: "Estadio San Marcos", region: "south-america", surpriseSongs: ["House Of Cards", "Ugh!"] },
     { date: "2026-10-14", city: "Santiago", country: "Chile", venue: "Estadio Nacional", region: "south-america", surpriseSongs: ["Run", "Save me"] },
-    { date: "2026-10-16", city: "Santiago", country: "Chile", venue: "Estadio Nacional", region: "south-america", surpriseSongs: null },
+    { date: "2026-10-16", city: "Santiago", country: "Chile", venue: "Estadio Nacional", region: "south-america", surpriseSongs: ["Telepathy", "Heartbeat"] },
     { date: "2026-10-17", city: "Santiago", country: "Chile", venue: "Estadio Nacional", region: "south-america", surpriseSongs: null },
     { date: "2026-10-21", city: "Buenos Aires", country: "Argentina", venue: "Estadio Único Diego Maradona", region: "south-america", surpriseSongs: null },
     { date: "2026-10-23", city: "Buenos Aires", country: "Argentina", venue: "Estadio Único Diego Maradona", region: "south-america", surpriseSongs: null },
